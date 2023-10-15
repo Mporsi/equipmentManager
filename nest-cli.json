@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/equipment-management/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/equipment-management/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/equipment-management",
+  "projects": {
+    "equipment-management": {
+      "type": "application",
+      "root": "apps/equipment-management",
+      "entryFile": "main",
+      "sourceRoot": "apps/equipment-management/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/equipment-management/tsconfig.app.json"
+      }
+    },
+    "equipment-management-history": {
+      "type": "application",
+      "root": "apps/equipment-management-history",
+      "entryFile": "main",
+      "sourceRoot": "apps/equipment-management-history/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/equipment-management-history/tsconfig.app.json"
+      }
+    },
+    "equipment-management-async": {
+      "type": "library",
+      "root": "libs/equipment-management-async",
+      "entryFile": "index",
+      "sourceRoot": "libs/equipment-management-async/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/equipment-management-async/tsconfig.lib.json"
+      }
+    }
+  }
+}
