@@ -18,11 +18,11 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/equipment-management-async": [
-        "libs/equipment-management-async/src"
+      "@app/equipment-management-lib": [
+        "libs/equipment-management-lib/src"
       ],
-      "@app/equipment-management-async/*": [
-        "libs/equipment-management-async/src/*"
+      "@app/equipment-management-lib/*": [
+        "libs/equipment-management-lib/src/*"
       ]
     }
   }

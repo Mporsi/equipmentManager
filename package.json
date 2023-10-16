@@ -70,7 +70,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@app/equipment-management-async(|/.*)$": "<rootDir>/libs/equipment-management-async/src/$1"
+      "^@app/equipment-management-lib(|/.*)$": "<rootDir>/libs/equipment-management-lib/src/$1"
     }
   }
 }
