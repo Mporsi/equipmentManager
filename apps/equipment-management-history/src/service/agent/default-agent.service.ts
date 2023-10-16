@@ -1,7 +1,8 @@
-import { Injectable, NotImplementedException } from '@nestjs/common';
+import {Injectable, NotImplementedException} from '@nestjs/common';
 
-import { IAgentStatus } from '../../common/agent-status.model';
-import { AgentModel } from '../../common/agent.model';
+import {IAgentStatus} from '../../common/agent-status.model';
+import {AgentModel} from '../../common/agent.model';
+import {IAgentRepository} from "../../data/agent/repositories/default-agent.repository";
 
 export abstract class IAgentService {
   abstract asignOrder(orderId: string): Promise<any>;
@@ -16,12 +17,16 @@ export abstract class IAgentService {
 }
 
 @Injectable()
-export class AgentService implements IAgentService {
+export class DefaultAgentService implements IAgentService {
+
+  constructor(private readonly agentRepository: IAgentRepository) {
+  }
+
   asignOrder(orderId: string): Promise<any> {
     throw new NotImplementedException();
   }
 
-  getAgent(agentId: string): Promise<> {
+  getAgent(agentId: string): Promise<AgentModel> {
     throw new NotImplementedException();
   }
 
