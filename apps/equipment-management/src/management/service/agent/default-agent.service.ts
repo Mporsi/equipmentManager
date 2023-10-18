@@ -14,6 +14,7 @@ import { AgentStatusUpdatedEvent } from '@app/equipment-management-lib/events/ag
 import { EquipmentState } from '../../../common/equipment-state.enum';
 import { AgentModel } from '../../../common/agent.model';
 import { IAgentStatus } from '../../../common/agent-status.model';
+import { AgentUnassignedOrderEvent } from '@app/equipment-management-lib';
 
 export abstract class IAgentService {
   abstract asignOrderToAgent(agentId: string, orderId: string): Promise<any>;
@@ -72,16 +73,13 @@ export class DefaultAgentService implements IAgentService {
   }
 
   unassignOrderOnAgent(agentId: string): Promise<IAgentStatus> {
+    /*
+    Unassign any order from the agent, essentially making it idle.
+    */
+
     this.eventEmitter.emit(
       AgentEvents.AGENT_UNASSIGNED_ORDER,
-      new AgentStatusUpdatedEvent(
-        agentId,
-        {
-          state: EquipmentState.RED,
-          currentOrder: null,
-        },
-        'unassigned order on agent',
-      ),
+      new AgentUnassignedOrderEvent(agentId),
     );
     throw new NotImplementedException();
   }
