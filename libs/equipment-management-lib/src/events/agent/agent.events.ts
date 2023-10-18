@@ -1,5 +1,4 @@
 export enum AgentEvents {
-  AGENT_REGISTERED = 'agent.registered',
-  AGENT_UNREGISTERED = 'agent.unregistered',
-  AGENT_ENTERED_FAULT = 'agent.entered.fault',
+  AGENT_STATUS_UPDATED = 'agent.status.updated',
+  AGENT_UNASSIGNED_ORDER = 'agent.unassigned.order',
 }

@@ -5,6 +5,6 @@ import { ServiceModule } from '../../service/service.module';
 
 @Module({
   imports: [ServiceModule],
-  providers: [AgentController, OrderController],
+  controllers: [AgentController, OrderController],
 })
 export class SyncApiModule {}
